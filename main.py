@@ -4,36 +4,31 @@ import aiohttp
 import asyncio
 import json
 import datetime
+from data.utility import TextColors as Colors
 
 # Get user's name and welcome them
 
 name = str()
 
-username = input("""
+print(f"""
 ------------------------------------------------------------------------------------------------------------
-Welcome to Delusionist Horrors. Be prepared, and good luck.
+Welcome! To {Colors.Magenta}The Delusionist{Colors.Reset}. If you are ready to start the game, just say your name.
+To get a random name, just type {Colors.Green}random{Colors.Reset}. To stop, type {Colors.Red}stop{Colors.Reset}.
 
-If you are ready to start the game, please enter the name you will be using for your character,
-or if you wish to use a random name, input "random". Thank you. 
-If you wish to exit the game at any time, type "stop".
+{Colors.Red}This game includes detailed explanations of occuring deaths.
+Please exit the game if you do not believe to be up for this.
+Death can be common in this game, so please be wary of this.{Colors.Reset}
 
-!!! CAUTION !!!
-This game includes death, and often explains in great detail how the death occured. If you cannot handle this, please exit the game immediately.
-This game gathers no data on it's own. The name will only be saved for as long as you are actually playing the game.
-------------------------------------------------`------------------------------------------------------------
-Credits:
-Development: Joshua Slui A.K.A. MiataBoy
-Story Line: Joshua Slui A.K.A. MiataBoy
+{Colors.Magenta}The Delusionist{Colors.Reset} is a game developed, and owned by FyukiGames.
 ------------------------------------------------------------------------------------------------------------
-""").capitalize()
+""")
+
+while not (username := input(f"{Colors.Green}Enter your name here: {Colors.Reset}").capitalize()).isalpha():
+    print(f"{Colors.Red}Please only use letters.{Colors.Reset}")
 
 # Fail if name is a digit because usually human names do not consist of digits
-
-if username.isdigit():
-    print("Names do not usually consist of numbers. Please try again (Error: {} invalid name)".format(username))
-    exit()
 if username == "Stop":
-    print("User requested to exit game, exiting...")
+    print(f"{Colors.Yellow}User requested to exit game, exiting...{Colors.Reset}")
     exit()
 
 
@@ -57,9 +52,7 @@ async def main():
 
 
 # Introduce the game
-print("hiervoor")
 asyncio.run(main())
-print("daarna")
 print(f"""
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 You are playing {name}. A man grown up with traumas and issues, that have caused a life long trauma and a life filled with delusions, and seeing things that aren't there.
