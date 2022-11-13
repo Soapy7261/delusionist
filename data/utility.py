@@ -18,7 +18,6 @@ class TextColors:
     Bright_Cyan = "\u001b[36;1m"
     Bright_White = "\u001b[37;1m"
 
-
 class BackColors:
     Reset = "\u001b[0m"
     Black = "\u001b[40m"
@@ -38,3 +37,7 @@ class BackColors:
     Bright_Magenta = "\u001b[45;1m"
     Bright_Cyan = "\u001b[46;1m"
     Bright_White = "\u001b[47;1m"
+
+def clear():
+    for x in range(50):
+        print("")
