@@ -33,7 +33,7 @@ while not (menu == "A" or menu == "B" or menu == "C" or menu == "D"):
 {Colors.Bright_Green}A game by Fyuki Games
 
 {Colors.Green}A) Play Game
-{Colors.Bright_Yellow}B) Settings (W.I.P.)
+{Colors.Bright_Yellow}B) Settings (Coming later)
 {Colors.Yellow}C) Credits
 {Colors.Red}D) Exit{Colors.Reset}
 """).upper()
