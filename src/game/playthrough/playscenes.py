@@ -1,9 +1,16 @@
 import json
-
+import datetime
+import os
 
 gameVar = 0
 count = 0
 scenario = 0
+
+with open('data/userdata.json') as up:
+    userdata = json.loads(up.read())
+
+print(userdata)
+name = userdata["user"]["name"]
 
 while gameVar == 0:
     with open('data/scene.json') as fp:
@@ -13,8 +20,8 @@ while gameVar == 0:
             data['parts']['scenarios'][scenario]['scenario']
         except:
             if IndexError:
-                print(
-                    'You have managed to escape the mansion, and been granted the help you needed. From here on, your life could only improve... Congratulations')
+                print('You have managed to escape the mansion, and been granted the help you needed. From here on, your life could only improve... Congratulations')
+
                 exit()
 
         print("You have unlocked Scenario {}. Congratulations on surviving.".format(scenario + 1))
@@ -88,8 +95,7 @@ Beware:  Sometimes your choice may be lethal to {name}, and submitting something
             answered(result)
         else:
             today = datetime.datetime.now()
-            print(
-                f"You have decided to do nothing. This, clearly was not a good idea as you have starved of hunger.\nRest in Peace {name}, 1993-{today.strftime('%Y')}")
+            print(f"You have decided to do nothing. This, clearly was not a good idea as you have starved of hunger.\nRest in Peace {name}, 1993-{today.strftime('%Y')}")
             exit()
 
         scenario += 1
