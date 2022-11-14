@@ -1,6 +1,7 @@
 import os
 
 from data.utility import TextColors as Colors
+from data.utility import clear
 
 input(f"""
 {Colors.Magenta}The Delusionist{Colors.Reset} is a game made by {Colors.Bright_Blue}Fyuki Games{Colors.Reset}
@@ -21,4 +22,5 @@ https://twitter.com/MiataBoyMX
 Press [ENTER] to return to main screen
 """)
 
+clear()
 exit(os.system('python main.py'))
