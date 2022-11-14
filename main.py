@@ -1,5 +1,29 @@
 from data.utility import TextColors as Colors
 from data.utility import clear
+import json
+
+import json
+import os
+
+def where_json(file_name):
+    return os.path.exists(file_name)
+
+
+if where_json(os.path.abspath("src/settings/settings.json")):
+    print("Settings file exists")
+    print(os.path.abspath("src/settings/settings.json"))
+    pass
+
+else:
+    print("{}WARNING: Settings file not found, creating one...".format(Colors.Yellow))
+    data = {
+ "flushing": "True"
+    }
+
+    with open('src/settings/settings.json', 'w') as outfile:
+        json.dump(data, outfile)
+
+    print("{}Settings file created successfully.".format(Colors.Green))
 
 menu = ""
 
