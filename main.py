@@ -14,6 +14,8 @@ while not (menu == "A" or menu == "B" or menu == "C" or menu == "D"):
 {Colors.Red}D) Exit{Colors.Reset}
 """).upper()
 
+clear()
+
 if menu == "A":
     from src.game.playthrough import gameplay
 
