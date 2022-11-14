@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+import json
 from data.utility import TextColors as Colors
 from data.utility import clear
 
@@ -45,6 +46,13 @@ async def main():
             name = "Miat"
     else:
         name = username
+
+    data = {
+        "user": {"name": name}
+    }
+
+    with open('data/userdata.json', 'w') as outfile:
+        json.dump(data, outfile)
 
 # Introduce the game
 asyncio.run(main())
