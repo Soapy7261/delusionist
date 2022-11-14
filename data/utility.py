@@ -39,5 +39,13 @@ class BackColors:
     Bright_White = "\u001b[47;1m"
 
 def clear():
-    for x in range(50):
-        print("")
+    import json
+
+    with open('src/settings/settings.json') as fp:
+        settings = json.loads(fp.read())
+
+    if settings["flushing"] == "True":
+        for x in range(50):
+            print("")
+    else:
+        pass
