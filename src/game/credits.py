@@ -24,3 +24,4 @@ Press [ENTER] to return to main screen
 
 clear()
 exit(os.system('python main.py'))
+# Make into function
