@@ -29,7 +29,7 @@ A) {Colors.Green if settings['flushing'] == 'True' else Colors.Red}Segmental flu
         setValue = input(f"Would you like to set this setting to \"{Colors.Green}True{Colors.Reset}\" or \"{Colors.Red}False{Colors.Reset}\"? Type {Colors.Yellow}\"Cancel{Colors.Reset}\" to cancel.").capitalize()
 
     if setValue == "Cancel":
-        return # seems to work
+        pass
 
     elif setValue == "True":
         changedSetting = {
