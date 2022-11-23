@@ -21,7 +21,9 @@ What setting would you like to change?
 A) {Colors.Green if settings['flushing'] == 'True' else Colors.Red}Segmental flushing: {settings['flushing']}{Colors.Reset}""").capitalize()
 
     if settingChoose == "Cancel":
+        clear()
         return # should exit function, doesnt
+
 
     while not (setValue == "True" or setValue == "False" or setValue == "Cancel"):
         setValue = input(f"Would you like to set this setting to \"{Colors.Green}True{Colors.Reset}\" or \"{Colors.Red}False{Colors.Reset}\"? Type {Colors.Yellow}\"Cancel{Colors.Reset}\" to cancel.").capitalize()
