@@ -44,6 +44,7 @@ while True:
     if menu == "B":
         from src.settings.set import settingDisplay
         settingDisplay()
+        menu = None
 
     if menu == "C":
         from src.game import credits
