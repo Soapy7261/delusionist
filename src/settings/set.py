@@ -43,4 +43,4 @@ A) {Colors.Green if settings['flushing'] == 'True' else Colors.Red}Segmental flu
 
     with open('src/settings/settings.json', 'w') as outfile:
         json.dump(changedSetting, outfile)
-        return # fix this not returning back to the ask which setting to change menu
+    settingDisplay()
