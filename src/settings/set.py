@@ -6,6 +6,7 @@ import os
 
 def settingDisplay():
     settingChoose = ""
+    changedSetting = {"flushing": True}
     setValue = ""
 
     while not (settingChoose == 'A' or settingChoose == 'Cancel'):
