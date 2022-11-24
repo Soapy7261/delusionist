@@ -31,6 +31,7 @@ while True:
         menu = input(f"""
     {Colors.Magenta}THE DELUSIONIST
     {Colors.Bright_Green}A game by Fyuki Games
+    https://discord.gg/wf89Guxdjb
     
     {Colors.Green}A) Play Game
     {Colors.Bright_Yellow}B) Settings (Coming later)
