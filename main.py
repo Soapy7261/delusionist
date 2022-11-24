@@ -48,7 +48,9 @@ while True:
         menu = None
 
     if menu == "C":
-        from src.game import credits
+        from src.game.credits import credit
+        credit()
+        menu = None
 
     if menu == "D":
         exit("Exiting the game for you. Please come again later!")
