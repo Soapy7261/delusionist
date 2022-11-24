@@ -23,7 +23,7 @@
       },
       {
         "scenario": "Go to sleep?",
-        "Death":  "Approaching the window, you suddenly hear a whisper behind you, it startles you as you turn around swift and back up. scared by a sudden shadow appearing in front of you, you back up too fast and shatter the window as you fall through.\nYou fall down, and onto a fench that pierces you through the heart, you never stood a chance. May NAME rest in peace.",
+        "Death":  "Approaching the window, you suddenly hear a whisper behind you, it startles you as you turn around swift and back up. scared by a sudden shadow appearing in front of you, you back up too fast and shatter the window as you fall through.\nYou fall down, and onto a fence that pierces you through the heart, you never stood a chance. May NAME rest in peace.",
         "decisions": [
           {
           "DecisionA": ["Go to the window", "False"],
