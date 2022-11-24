@@ -24,7 +24,7 @@ while gameVar == 0:
 
                 exit()
 
-        test = input(f"Scenario {scenario + 1}:\n{data['parts']['story'][0][f'Scenario{scenario}']}\n\n{Colors.Green}Press [ENTER] to continue{Colors.Reset}")
+        input(f"Scenario {scenario + 1}:\n{data['parts']['story'][0][f'Scenario{scenario}']}\n\n{Colors.Green}Press [ENTER] to continue{Colors.Reset}")
 
         clear()
 
