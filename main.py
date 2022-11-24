@@ -33,8 +33,8 @@ while True:
     {Colors.Bright_Green}A game by Fyuki Games
     https://discord.gg/wf89Guxdjb
     
-    {Colors.Green}A) Play Game
-    {Colors.Bright_Yellow}B) Settings (Coming later)
+    A) Play Game
+    {Colors.Bright_Yellow}B) Settings
     {Colors.Yellow}C) Credits
     {Colors.Red}D) Exit{Colors.Reset}
     """).upper()
