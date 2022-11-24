@@ -29,16 +29,14 @@ while gameVar == 0:
         clear()
 
         answer = input(f"""
--------------------------------------------------------------------------------------
-A choice presents itself... What will {name} choose?
+{Colors.Red}A choice presents itself... What will {name} choose?
 
-{data['parts']['scenarios'][scenario]['scenario']}
+{Colors.Yellow}{data['parts']['scenarios'][scenario]['scenario']}{Colors.Reset}
 [A] {data['parts']['scenarios'][scenario]['decisions'][0]['DecisionA'][0]}
 [B] {data['parts']['scenarios'][scenario]['decisions'][0]['DecisionB'][0]}
 [C] {data['parts']['scenarios'][scenario]['decisions'][0]['DecisionC'][0]}
 
-Beware:  Sometimes your choice may be lethal to {name}, and submitting something else will always be lethal.
--------------------------------------------------------------------------------------
+{Colors.Red}Beware: Sometimes your choice may be lethal to {name}, and submitting something else will always be lethal.{Colors.Reset}
 """).lower()
 
 
