@@ -1,6 +1,7 @@
 import json
 import datetime
-import os
+from data.utility import TextColors as Colors
+from data.utility import clear
 
 gameVar = 0
 count = 0
