@@ -24,7 +24,7 @@ while gameVar == 0:
 
                 exit()
 
-        print("You have unlocked Scenario {}. Congratulations on surviving.".format(scenario + 1))
+        test = input(f"Scenario {scenario + 1}:\n{data['parts']['story'][0][f'Scenario{scenario}']}\n\n{Colors.Green}Press [ENTER] to continue{Colors.Reset}")
 
         print("\n", data['parts']['story'][0]['Scenario{}'.format(scenario)])
 
