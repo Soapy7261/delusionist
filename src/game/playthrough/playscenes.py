@@ -10,7 +10,6 @@ scenario = 0
 with open('data/userdata.json') as up:
     userdata = json.loads(up.read())
 
-print(userdata)
 name = userdata["user"]["name"]
 
 while gameVar == 0:
