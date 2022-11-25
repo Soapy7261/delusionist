@@ -1,3 +1,6 @@
+import asyncio
+
+
 class TextColors:
     Reset = "\u001b[0m"
     Black = "\u001b[30m"
@@ -49,3 +52,6 @@ def clear():
             print("")
     else:
         pass
+def hibernate(hibernation: int) -> None:
+    asyncio.run(asyncio.sleep(hibernation))
+
