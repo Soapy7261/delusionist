@@ -98,3 +98,65 @@
 #
 #         scenario += 1
 # We can do this better:
+
+import json
+from data.utility import hibernate, clear
+from data.utility import TextColors as Colors
+
+# Variables essential to game runtime
+gamePlay = True
+scenario = 0
+mainDecision = ""
+FollowDecision = ""
+
+# JSON connection
+with open('data/userdata.json') as up:
+    userdata = json.loads(up.read())
+
+name = userdata['user']['name']
+
+while gamePlay:
+    with open('data/scenes.json') as fp:
+         data = json.loads(fp.read())
+
+    # Answer filter function
+    def funcAnswer(userAnswer: str) -> str:
+        userAnswer = "This is in progress."
+        return userAnswer
+
+    def decisions(selection: str) -> str: # Returns the string relevant to the given selection (A,B,C)
+        selection = data['parts']['scenarios'][scenario]['decisions'][0][f'Decision{selection}'][0]
+        return selection
+
+    def decisionsRes(selection: str) -> str: # Returns the result string relevant to the given selection (A,B,C)
+        selection = data['parts']['scenarios'][scenario]['decisions'][0][f'Decision{selection}'][1]
+        return selection
+
+    def followDecisions(selection: str) -> str: # Returns the string relevant to the given selection (A,B)
+        selection = data['parts']['scenarios'][scenario]['followup'][0][f'Decision{selection}'][0]
+        return selection
+
+    def followDecisionsRes(selection: str) -> str: # Returns the result string relevant to the given selection (A,B)
+        selection = data['parts']['scenarios'][scenario]['followup'][0][f'Decision{selection}'][1]
+        return selection
+
+
+    print(f"Scenario {scenario + 1}:\n{data['parts']['story'][0][f'Scenario{scenario}']}\n\n{Colors.Green}Continuing in 30 seconds...{Colors.Reset}")
+
+    hibernate(5)
+
+    while not (mainDecision == "a" or mainDecision == "b" or mainDecision == "c" or mainDecision == "stop"):
+        mainDecision = input(f"""
+You must make a choice. {Colors.Red}Best you be careful,
+because the wrong choice could mean the end of you...{Colors.Yellow}
+
+A >> {decisions("A")}
+B >> {decisions("B")} 
+C >> {decisions("C")}
+
+{Colors.Reset}Want to stop? Simply type "stop" to stop.
+Answer here: """).lower()
+
+    if mainDecision == "stop":
+        gamePlay = False
+
