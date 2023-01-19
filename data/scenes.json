@@ -17,7 +17,7 @@
         },
         "death": "While exploring the rooms, you fall through the floor and into the basement. The fall breaks both your legs,and you lay there for days, screaming in pain where no one can hear you.\nBeing driven crazy by your illusions, you grab a piece of wood from the floor, and stab yourself in the neck. You bleed to death slowly..."
       },
-      { // This is the start of scenario 2 (or by code 1)
+      {
         "question": "",
         "answers": {
           "answerKeys": {
@@ -32,7 +32,23 @@
           }
         },
         "death": ""
-      } // This is the end of scenario 2 (or by code 1)
+      },
+      {
+        "question": "",
+        "answers": {
+          "answerKeys": {
+            "decisionA": "",
+            "decisionB": "",
+            "decisionC": ""
+          },
+          "answerValues": {
+            "DecisionA": "",
+            "DecisionB": "",
+            "DecisionC": ""
+          }
+        },
+        "death": ""
+      }
     ]
   },
   {
