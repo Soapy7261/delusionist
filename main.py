@@ -49,39 +49,44 @@ He was helpless, unable to provide for himself and unable to be provided to, his
 {Colors.Bright_Blue}Submit any character to begin.{Colors.Reset}
 """)
 
-    with open('scenarios.json') as fp:
+    with open('data/scenes.json') as fp:
         data = json.loads(fp.read())
 
-    print(len(data['parts']['scenarios']))
+    print(len(data[0]['scenarios']))
 
-    while playScene < len(data['parts']['scenarios']):
+    while playScene < len(data[0]['scenarios']):
         # Variables for the game to work
         mainDecision = ""
 
         print(f"{Colors.Bright_Blue}Congratulations! Part {playScene+1} has been unlocked.{Colors.Reset}")
 
-        print(data['parts']['story'][0][f'Scenario{playScene}'])
+        print(data[2]['stories'][f'Scenario{playScene}'])
 
-        while not (mainDecision == "a" or mainDecision == "b" or mainDecision == "c" or mainDecision == "stop"):
+        while not (mainDecision == "A" or mainDecision == "B" or mainDecision == "C" or mainDecision == "Stop"):
             mainDecision = input(f"""
 You must make a choice. {Colors.Red}Best you be careful,
 because the wrong choice could mean the end of you...{Colors.Yellow}
+
+{Colors.Reset}{data[0]['scenarios'][playScene]['question']}
+
 A >> {utility.decisions("A", playScene)}
 B >> {utility.decisions("B", playScene)} 
 C >> {utility.decisions("C", playScene)}
 {Colors.Bright_Blue}Want to stop? Simply type "stop" to stop.{Colors.Reset}
-Answer here: """).lower()
+Answer here: """).upper()
 
-        if mainDecision == "stop":
+        if mainDecision == "Stop":
             playScene = len(data['parts']['scenarios'])
         else:
             action = utility.answerHandling(mainDecision, playScene)
             if action == "point":
                 points += 1
                 playScene += 1
+            elif action == "nopoint":
+                playScene += 1
             else:
                 print(action)
-                playScene = len(data['parts']['scenarios'])
+                playScene = len(data[0]['scenarios'])
 
     # THE WHILE LOOP ENDS HERE, PAST THIS POINT ONLY HANDLES PLAYING AGAIN
 

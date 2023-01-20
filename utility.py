@@ -22,28 +22,30 @@ class TextColors:
     Bright_White = "\u001b[37;1m"
 
 
-with open('scenarios.json') as fp:
+with open('data/scenes.json') as fp:
     data = json.loads(fp.read())
 
+# x[0].scenarios[1]
 
 def decisions(selection: str, currentScene: int) -> str:  # Returns the string relevant to the given selection (A,B,C)
-    selection = data['parts']['scenarios'][currentScene]['decisions'][0][f'Decision{selection}'][0]
+    selection = data[0]['scenarios'][currentScene]['answers']['answerKeys'][f'Decision{selection}']
     return selection
 
 
 def followDecisions(selection: str, currentScene: int) -> str:
-    selection = data['parts']['scenarios'][currentScene]['followup'][0][f'Decision{selection.upper()}'][0]
+    selection = data[1]['follows'][currentScene]['answers']['answerKeys'][f'Decision{selection}']
     return selection
 
 
 def answerHandling(selection: str, currentScene: int) -> str:
-    result = data['parts']['scenarios'][currentScene]['decisions'][0][f'Decision{selection.upper()}'][1]
+    print(data[0]['scenarios'][0]['answers']['answerValues']['DecisionA'])
+    result = data[0]['scenarios'][currentScene]['answers']['answerValues'][f'Decision{selection}']
 
     if result == "False":
-        return data['parts']['scenarios'][currentScene]['Death']
+        return data[0]['scenarios'][currentScene]['Death']
     elif result == "True":
         return "point"
-    elif result == "follow":
+    elif result == "Trail":
         mainDecision = ""
 
         while not (mainDecision == "a" or mainDecision == "b"):
@@ -54,10 +56,7 @@ A >> {followDecisions("A", currentScene)}
 B >> {followDecisions("B", currentScene)} 
 Answer here: """).lower()
 
-        if data['parts']['scenarios'][currentScene]['followup'][0][f'Decision{mainDecision.upper()}'][1] == "True":
-            return "point"
+        if data[1]['follows'][currentScene]['answers']['answerValues'][f'Decision{selection}']  == "True":
+            return "nopoint"
         else:
-            return data['parts']['scenarios'][currentScene]['followup'][0]['Death']
-
-
-answerHandling("A", 1)
+            return data[1]['follows'][currentScene]['death']

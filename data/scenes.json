@@ -18,36 +18,36 @@
         "death": "While exploring the rooms, you fall through the floor and into the basement. The fall breaks both your legs,and you lay there for days, screaming in pain where no one can hear you.\nBeing driven crazy by your illusions, you grab a piece of wood from the floor, and stab yourself in the neck. You bleed to death slowly..."
       },
       {
-        "question": "",
+        "question": "Sleep on the bed?",
         "answers": {
           "answerKeys": {
-            "decisionA": "",
-            "decisionB": "",
-            "decisionC": ""
+            "decisionA": "No, look out the window",
+            "decisionB": "No, sleep on the floor instead",
+            "decisionC": "Yes, sleep in the bed"
           },
           "answerValues": {
-            "DecisionA": "",
-            "DecisionB": "",
-            "DecisionC": ""
+            "DecisionA": "False",
+            "DecisionB": "Trail",
+            "DecisionC": "True"
           }
         },
-        "death": ""
+        "death": "Approaching the window, you suddenly hear a whisper behind you, it startles you as you turn around swift and back up. scared by a sudden shadow appearing in front of you, you back up too fast and shatter the window as you fall through.\nYou fall down, and onto a fence that pierces you through the heart, you never stood a chance. May NAME rest in peace."
       },
       {
-        "question": "",
+        "question": "Search for the kitchen",
         "answers": {
           "answerKeys": {
-            "decisionA": "",
-            "decisionB": "",
-            "decisionC": ""
+            "decisionA": "Yes, i'm hungy",
+            "decisionB": "No, attempt to leave again",
+            "decisionC": "No, i want to sleep more"
           },
           "answerValues": {
-            "DecisionA": "",
-            "DecisionB": "",
-            "DecisionC": ""
+            "DecisionA": "True",
+            "DecisionB": "False",
+            "DecisionC": "False"
           }
         },
-        "death": ""
+        "death": "After trying for a while, you realize that it just isn't happening. You get desperate and head to the window in an attempt to escape this hellhole.\nBut something behind you pushes you to your inevitable doom, as within seconds you lie on a metal fence at the foot of the mansion, as you can't get off the spikes of the fence, you realize you will inevitably die slowly..."
       }
     ]
   },
@@ -66,6 +66,34 @@
           }
         },
         "death": "You decide to stay downstairs, and sit against the wall, desperate. You lost your energy and will to continue, and you starve to death from hunger and thirst.\nYour body is only discovered years later after being blown to pieces with dynamite used to destroy the building. Terrible way to be remembered.."
+      },
+      {
+        "question": "Exit the room?",
+        "answers": {
+          "answerKeys": {
+            "DecisionA": "Yeah, i choose life.",
+            "DecisionB": "No, i'm tired."
+          },
+          "answerValues": {
+            "DecisionA": "False",
+            "DecisionB": "True"
+          }
+        },
+        "death": "Being scared, you decide to run off and down the stairs. Unfortunately, you were too fast, and fall down the grand staircase. you hit your head on one of the staircases while rolling down and it splits your skull clean open, resulting in NAME's unfortunate death"
+      },
+      {
+        "question": "This scenario does not have a trailing option.",
+        "answers": {
+          "answerKeys": {
+            "DecisionA": "This scenario does not have a trailing option.",
+            "DecisionB": "This scenario does not have a trailing option."
+          },
+          "answerValues": {
+            "DecisionA": "This scenario does not have a trailing option.",
+            "DecisionB": "This scenario does not have a trailing option."
+          }
+        },
+        "death": "This scenario does not have a trailing option."
       }
     ]
   },
